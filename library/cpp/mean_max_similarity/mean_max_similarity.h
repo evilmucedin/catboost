@@ -1,7 +1,7 @@
 #pragma once
 
-#include <contrib/libs/eigen/Eigen/Core>
-#include <contrib/libs/eigen/Eigen/SparseCore>
+#include <Eigen/Core>
+#include <Eigen/SparseCore>
 #include <library/cpp/dot_product/dot_product.h>
 #include <util/generic/ymath.h>
 #include <util/system/compiler.h>

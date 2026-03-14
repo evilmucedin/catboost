@@ -32,6 +32,7 @@ cc_library(
         ":logger_priority_enum_serialization",
         "//library/cpp/json",
         "//tools/enum_parser/enum_serialization_runtime",
+        "//library/cpp/object_factory:object_factory",
         "//util",
     ],
     visibility = ["//visibility:public"],

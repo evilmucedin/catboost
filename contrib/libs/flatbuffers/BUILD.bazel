@@ -54,7 +54,7 @@ cc_library(
         "src/util.cpp",
     ],
     hdrs = glob(["include/**", "src/**/*.h"]),
-    includes = ["include"],
+    includes = ["include", "src"],
     deps = [
         ":flatbuffers",
         "//contrib/libs/flatbuffers/grpc:grpc_gen",

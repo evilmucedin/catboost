@@ -15,6 +15,8 @@ cc_library(
         "//library/cpp/l1_distance:l1_distance",
         "//library/cpp/l2_distance:l2_distance",
         "//library/cpp/pair_vector_distance:pair_vector_similarity",
+        "//library/cpp/mean_max_similarity:mean_max_similarity",
+        "//contrib/libs/eigen:eigen",
     ],
     visibility = ["//visibility:public"],
 )
