@@ -43,6 +43,8 @@ cc_library(
             "**/*_ut_*.cpp",
             "**/ut/**",
             "**/benchmark/**",
+            "system/fs_win.cpp",  # Windows-specific implementation not used on Linux
+            "system/winint.cpp", # Windows-specific implementation not used on Linux
         ],
     ),
     hdrs = glob([
@@ -59,10 +61,11 @@ cc_library(
         "string/*.h",
         "system/*.h",
         "thread/*.h",
-    ]),
+    ]) + ["stlfwd", "system/thread.i"],
     copts = [
         "-Wno-narrowing",
         "-Wno-deprecated-declarations",
+        "-msse4.1",
     ],
     includes = ["."],
     strip_include_prefix = ".",

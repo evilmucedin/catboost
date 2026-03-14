@@ -14,7 +14,9 @@ cc_library(
         ["*.h", "include/*.h"],
         allow_empty = True,
     ),
-    includes = [".", "include"],
+    includes = ["."],
+    strip_include_prefix = ".",
+    include_prefix = "contrib/libs/libc_compat",
     visibility = ["//visibility:public"],
     copts = select({
         "@platforms//os:windows": [],

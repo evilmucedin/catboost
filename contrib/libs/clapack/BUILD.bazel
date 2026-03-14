@@ -8,8 +8,8 @@ cc_library(
         "*.c",
     ], allow_empty = True),
     hdrs = glob(["*.h", "include/*.h"], allow_empty = True),
-    includes = [".", "include", "../libf2c"],
-    deps = ["//contrib/libs/libf2c"],
+    includes = [".", "include", "../libf2c", "../cblas"],
+    deps = ["//contrib/libs/libf2c", "//contrib/libs/cblas"],
     copts = ["-Wno-everything"],
     visibility = ["//visibility:public"],
 )

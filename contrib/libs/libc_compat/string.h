@@ -2,7 +2,7 @@
 
 #include <stddef.h>
 #include <ctype.h>
-#include <string.h>
+#include_next <string.h>
 
 #ifdef __cplusplus
 extern "C" {

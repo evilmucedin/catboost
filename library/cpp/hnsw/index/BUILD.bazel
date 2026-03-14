@@ -10,6 +10,11 @@ cc_library(
     deps = [
         "//util",
         "//library/cpp/containers/dense_hash",
+        "//library/cpp/hnsw/helpers:hnsw_helpers",
+        "//library/cpp/dot_product:dot_product",
+        "//library/cpp/l1_distance:l1_distance",
+        "//library/cpp/l2_distance:l2_distance",
+        "//library/cpp/pair_vector_distance:pair_vector_similarity",
     ],
     visibility = ["//visibility:public"],
 )
