@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # Note: parser.rl6 must be compiled with Ragel to produce parser.cpp.
 # If parser.cpp is not pre-generated, install Ragel and uncomment the
 # genrule below.

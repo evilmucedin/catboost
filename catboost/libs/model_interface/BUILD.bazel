@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import", "cc_shared_library")
+
 # catboostmodel — shared library and C API for model inference.
 #
 # Exported symbols are controlled by calcer.exports.
@@ -18,8 +20,9 @@ cc_library(
 
 cc_shared_library(
     name = "catboostmodel",
-    roots = [":catboostmodel_impl"],
-    exports_filter = ["//catboost/libs/..."],
+    deps = [":catboostmodel_impl"],
+    # exports_filter with //... wildcard is not supported by rules_cc package_relative_label.
+    # Omit exports_filter to avoid invalid label in rules_cc implementation.
     user_link_flags = select({
         "@platforms//os:macos": [
             "-Wl,-undefined,dynamic_lookup",

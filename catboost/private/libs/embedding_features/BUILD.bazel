@@ -1,4 +1,6 @@
 load("//bazel:flatbuffers.bzl", "flatbuffers_library")
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 
 flatbuffers_library(
     name = "embedding_features_flatbuffers",
@@ -10,9 +12,7 @@ flatbuffers_library(
         "catboost/private/libs/embedding_features/flatbuffers",
         ".",
     ],
-    deps = [
-        "//contrib/libs/flatbuffers",
-    ],
+    deps = [],
     visibility = ["//visibility:public"],
 )
 

@@ -1,4 +1,6 @@
 load("//bazel:enum_serialization.bzl", "generate_enum_serialization")
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 
 generate_enum_serialization(
     name = "ctr_type_enum_serialization",

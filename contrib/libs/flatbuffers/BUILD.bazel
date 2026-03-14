@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # FlatBuffers C++ runtime library (vendored).
 
 cc_library(
@@ -12,5 +14,50 @@ cc_library(
     includes = ["include"],
     defines = ["FLATBUFFERS_LOCALE_INDEPENDENT=1"],
     copts = ["-Wno-sign-compare"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "flatc_src",
+    srcs = [
+        "src/annotated_binary_text_gen.cpp",
+        "src/bfbs_gen_lua.cpp",
+        "src/bfbs_gen_nim.cpp",
+        "src/binary_annotator.cpp",
+        "src/code_generators.cpp",
+        "src/file_binary_writer.cpp",
+        "src/file_name_saving_file_manager.cpp",
+        "src/file_writer.cpp",
+        "src/flatc.cpp",
+        "src/flatc_main.cpp",
+        "src/idl_gen_binary.cpp",
+        "src/idl_gen_cpp.cpp",
+        "src/idl_gen_cpp_yandex_maps_iter.cpp",
+        "src/idl_gen_csharp.cpp",
+        "src/idl_gen_dart.cpp",
+        "src/idl_gen_fbs.cpp",
+        "src/idl_gen_go.cpp",
+        "src/idl_gen_grpc.cpp",
+        "src/idl_gen_java.cpp",
+        "src/idl_gen_json_schema.cpp",
+        "src/idl_gen_kotlin.cpp",
+        "src/idl_gen_kotlin_kmp.cpp",
+        "src/idl_gen_lobster.cpp",
+        "src/idl_gen_php.cpp",
+        "src/idl_gen_python.cpp",
+        "src/idl_gen_rust.cpp",
+        "src/idl_gen_swift.cpp",
+        "src/idl_gen_text.cpp",
+        "src/idl_gen_ts.cpp",
+        "src/idl_parser.cpp",
+        "src/reflection.cpp",
+        "src/util.cpp",
+    ],
+    hdrs = glob(["include/**", "src/**/*.h"]),
+    includes = ["include"],
+    deps = [
+        ":flatbuffers",
+        "//contrib/libs/flatbuffers/grpc:grpc_gen",
+    ],
     visibility = ["//visibility:public"],
 )

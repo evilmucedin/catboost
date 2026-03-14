@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 cc_library(
     name = "malloc_api",
     srcs = ["malloc.cpp"],
@@ -5,3 +7,10 @@ cc_library(
     deps = ["//util"],
     visibility = ["//visibility:public"],
 )
+
+alias(
+    name = "api",
+    actual = ":malloc_api",
+    visibility = ["//visibility:public"],
+)
+

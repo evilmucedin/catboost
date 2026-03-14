@@ -2,7 +2,7 @@
 
 #include <util/generic/fwd.h>
 
-#include <stlfwd>
+#include <util/stlfwd>
 
 /* Replace all occurences of substring `what` with string `with` starting from position `from`.
  *

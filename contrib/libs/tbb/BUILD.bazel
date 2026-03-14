@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # Intel Threading Building Blocks (TBB) — vendored copy.
 
 cc_library(

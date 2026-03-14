@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # Runtime support library for enum serialization (ToString/FromString/Out).
 
 cc_library(

@@ -1,19 +1,15 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # CLAPACK — C-language LAPACK for linear algebra (text/embedding features).
 
 cc_library(
     name = "clapack",
-    srcs = glob(
-        [
-            "*.c",
-            "F2CLIBS/libf2c/*.c",
-        ],
-        exclude = [
-            "*_test*.c",
-            "test*.c",
-        ],
-    ),
-    hdrs = glob(["*.h", "F2CLIBS/libf2c/*.h", "include/*.h"]),
-    includes = [".", "include", "F2CLIBS/libf2c"],
+    srcs = glob([
+        "*.c",
+    ], allow_empty = True),
+    hdrs = glob(["*.h", "include/*.h"], allow_empty = True),
+    includes = [".", "include", "../libf2c"],
+    deps = ["//contrib/libs/libf2c"],
     copts = ["-Wno-everything"],
     visibility = ["//visibility:public"],
 )

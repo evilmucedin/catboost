@@ -14,7 +14,6 @@ flatbuffers_library(
     ],
     deps = [
         "//catboost/libs/helpers/flatbuffers:helpers_flatbuffers",
-        "//contrib/libs/flatbuffers",
     ],
     visibility = ["//visibility:public"],
 )

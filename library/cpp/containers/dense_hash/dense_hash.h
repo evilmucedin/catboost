@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fwd.h"
+#include <library/cpp/containers/dense_hash/fwd.h>
 
 #include <util/generic/bitops.h>
 #include <util/generic/utility.h>

@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 cc_library(
     name = "dense_hash",
     srcs = ["dense_hash.cpp"],

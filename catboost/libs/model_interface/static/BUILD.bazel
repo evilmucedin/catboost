@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # catboostmodel_static — fully self-contained static archive.
 #
 # Link this into your application to use CatBoost model inference with no

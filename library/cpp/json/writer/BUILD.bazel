@@ -1,4 +1,6 @@
 load("//bazel:enum_serialization.bzl", "generate_enum_serialization")
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 
 generate_enum_serialization(
     name = "json_value_enum_serialization",
@@ -19,5 +21,11 @@ cc_library(
         "//tools/enum_parser/enum_serialization_runtime",
         "//util",
     ],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "json_writer_headers",
+    hdrs = glob(["*.h"]),
     visibility = ["//visibility:public"],
 )

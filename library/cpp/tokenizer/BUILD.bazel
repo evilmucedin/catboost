@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # Note: .rl and .rl6 files need to be compiled with Ragel.
 # If the generated .cpp files are not pre-committed, install Ragel to build them.
 

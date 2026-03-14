@@ -12,6 +12,8 @@ Usage:
     )
 """
 
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
 def generate_enum_serialization(name, src, includes = [], extra_headers = [], visibility = None):
     """Generate enum serialization .cpp source from a C++ header.
 
@@ -42,7 +44,7 @@ def generate_enum_serialization(name, src, includes = [], extra_headers = [], vi
         tools = ["//tools/enum_parser/enum_parser"],
     )
 
-    native.cc_library(
+    cc_library(
         name = name,
         srcs = [out_cpp],
         deps = [

@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # yutil — Yandex core utility library.
 #
 # This is a large monolithic library covering: string/stream I/O, containers,
@@ -62,6 +64,9 @@ cc_library(
         "-Wno-narrowing",
         "-Wno-deprecated-declarations",
     ],
+    includes = ["."],
+    strip_include_prefix = ".",
+    include_prefix = "util",
     linkopts = select({
         "@platforms//os:windows": [],
         "@platforms//os:macos": [],
@@ -78,3 +83,10 @@ cc_library(
     ],
     visibility = ["//visibility:public"],
 )
+
+alias(
+    name = "util",
+    actual = ":yutil",
+    visibility = ["//visibility:public"],
+)
+

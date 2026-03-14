@@ -50,7 +50,7 @@
 /* @(#) $Id$ */
 
 #include "deflate.h"
-#include <util/system/compiler.h>
+#include "compiler.h"
 
 const char deflate_copyright[] =
    " deflate 1.3.2 Copyright 1995-2026 Jean-loup Gailly and Mark Adler ";

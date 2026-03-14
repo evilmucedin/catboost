@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # enum_parser — host binary that generates enum serialization .cpp files.
 # This tool is used at build time via the generate_enum_serialization() macro.
 
@@ -7,8 +9,11 @@ cc_binary(
         "main.cpp",
         "stdlib_deps.h",
     ],
+    copts = ["-I."],
     deps = [
         "//library/cpp/getopt/small:getopt_small",
+        "//library/cpp/json/writer:json_writer_headers",
+        "//library/cpp/json/common:json_common",
         "//tools/enum_parser/parse_enum",
         "//util",
     ],

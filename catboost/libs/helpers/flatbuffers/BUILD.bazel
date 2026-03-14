@@ -8,7 +8,6 @@ flatbuffers_library(
         ".",
     ],
     deps = [
-        "//contrib/libs/flatbuffers",
         "//util",
     ],
     visibility = ["//visibility:public"],

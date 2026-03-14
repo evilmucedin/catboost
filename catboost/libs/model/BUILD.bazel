@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary", "cc_test", "cc_import")
+
 # catboost-libs-model: Core CatBoost model representation and CPU evaluation.
 #
 # Provides TFullModel — the main model container — together with CPU-based

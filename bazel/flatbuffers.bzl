@@ -8,6 +8,8 @@ Usage:
     )
 """
 
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
 def flatbuffers_library(name, srcs, include_paths = [], deps = [], visibility = None):
     """Generate C++ headers and sources from FlatBuffers .fbs schema files.
 
@@ -44,7 +46,7 @@ def flatbuffers_library(name, srcs, include_paths = [], deps = [], visibility = 
         tools = ["//contrib/libs/flatbuffers/flatc"],
     )
 
-    native.cc_library(
+    cc_library(
         name = name,
         srcs = outs_cpp,
         hdrs = outs_h,
