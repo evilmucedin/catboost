@@ -11,7 +11,7 @@ cc_library(
         "fwd.h",
         "output.h",
     ],
-    includes = ["../../.."],
+    includes = [".."],
     deps = ["//util"],
     visibility = ["//visibility:public"],
 )
