@@ -8,6 +8,9 @@ cc_library(
         "path_with_scheme.cpp",
     ],
     hdrs = glob(["*.h"]),
-    deps = ["//util"],
+    deps = [
+        "//util",
+        "//catboost/libs/helpers:helpers_exception",
+    ],
     visibility = ["//visibility:public"],
 )

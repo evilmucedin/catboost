@@ -8,6 +8,9 @@ cc_library(
         "text.cpp",
     ],
     hdrs = glob(["*.h"]),
-    deps = ["//util"],
+    deps = [
+        "//util",
+        "//library/cpp/binsaver",
+    ],
     visibility = ["//visibility:public"],
 )

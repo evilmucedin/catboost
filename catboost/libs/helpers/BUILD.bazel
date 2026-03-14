@@ -15,6 +15,13 @@ generate_enum_serialization(
 )
 
 cc_library(
+    name = "helpers_exception",
+    hdrs = ["exception.h"],
+    deps = ["//util"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
     name = "helpers",
     srcs = glob(
         ["*.cpp"],
@@ -28,6 +35,7 @@ cc_library(
         exclude = ["**/ut/**"],
     ),
     deps = [
+        ":helpers_exception",
         ":helpers_distribution_enum_serialization",
         ":helpers_sparse_array_enum_serialization",
         "//catboost/libs/helpers/flatbuffers:helpers_flatbuffers",
